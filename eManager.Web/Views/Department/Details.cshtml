@@ -1,0 +1,15 @@
+﻿@model eManager.Domain.Department
+
+@{
+    ViewBag.Title = "Department";
+}
+
+<h1>@Model.Name</h1>
+
+@Html.ActionLink("Create Employee", "Create", "Employee", new { DepartmentId = @Model.Id }, null)
+<ul>
+    @foreach (var emp in Model.Employees)
+    {
+        <li>@emp.Name</li>
+    }
+</ul>

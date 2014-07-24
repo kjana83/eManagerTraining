@@ -1,0 +1,29 @@
+﻿@using eManager.Web.Helper
+@model eManager.Web.Models.CreateEmployeeViewModel
+
+@{
+    ViewBag.Title = "Create Employee";
+}
+
+<h1>@ViewBag.Title</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Create Employee</legend>
+        <div class="editor-field">@Html.EditorFor(model=>model.DepartmentId)</div>
+        @Html.SplLabelFor(model=>model.Name)
+        <div class="editor-label">@Html.LabelFor(model=>model.Name)</div>
+        <div class="editor-field">
+            @Html.EditorFor(model=>model.Name)
+            @Html.ValidationMessageFor(model=>model.Name)
+        </div>
+        <div class="editor-label">@Html.LabelFor(model=>model.JoiningDate)</div>
+        <div class="editor-field">
+            @Html.EditorFor(model=>model.JoiningDate)
+            @Html.ValidationMessageFor(model=>model.JoiningDate)
+        </div>
+        <input type="submit" value="Create"/>
+    </fieldset>
+}
